@@ -4,9 +4,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        // Test the two pointers method
-        char[] s = new char[] { 'h', 'e', 'l', 'l', 'o' };
-        TwoPointers.ReverseString(s);
-        Console.WriteLine(s);
+        // Test the palindrome method
+        string s = "racecar";
+        Console.WriteLine(TwoPointers.CheckIfPalindrome(s));
     }
 }
