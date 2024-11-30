@@ -28,12 +28,39 @@ namespace CodeChallenges.ArrayAndStrings
             while (left < right)
             {
                 if (s[left] != s[right])
+                {
                     return false;
+                }
                 left++;
                 right--;
             }
 
             return true;
+        }
+
+        public bool IsTarget(int[] arr, int target)
+        {
+            int left = 0;
+            int right = arr.Length - 1;
+
+            while (left < right)
+            {
+                int curr = arr[left] + arr[right];
+                if (curr == target)
+                {
+                    return true;
+                }
+                else if (curr > target)
+                {
+                    right--;
+                }
+                else
+                {
+                    left++;
+                }
+            }
+
+            return false;
         }
     }
 }
