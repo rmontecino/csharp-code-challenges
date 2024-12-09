@@ -4,9 +4,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-         // Test the RunningSum method
-        int[] nums = new int[] { 1, 2, 3, 4 };
-        int[] result = SlindingWindow.RunningSum(nums);
-        Console.WriteLine(string.Join(", ", result)); // Output: 1, 3, 6, 10
+        // Test the MinStartValue method
+        int[] nums = new int[] { -3, 2, -3, 4, 2 };
+        int result = SlindingWindow.MinStartValue(nums);
+        Console.WriteLine(result); // Output: 5
     }
 }

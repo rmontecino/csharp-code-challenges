@@ -80,5 +80,25 @@ namespace CodeChallenges.ArrayAndStrings
 
             return runningSum;
         }
+
+        public static int MinStartValue(int[] nums)
+        {
+            // Step 1: Initialize minSum to 0 and currentSum to 0
+            int minSum = 0;
+            int currentSum = 0;
+
+            // Step 2: Iterate through the array
+            for (int i = 0; i < nums.Length; i++)
+            {
+                // Step 3: Update currentSum
+                currentSum += nums[i];
+
+                // Step 4: Update minSum if currentSum is less than minSum
+                minSum = Math.Min(minSum, currentSum);
+            }
+
+            // Step 5: Return the absolute value of minSum plus 1
+            return Math.Abs(minSum) + 1;
+        }
     }
 }
