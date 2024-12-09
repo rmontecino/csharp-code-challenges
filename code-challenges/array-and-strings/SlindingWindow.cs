@@ -62,5 +62,23 @@ namespace CodeChallenges.ArrayAndStrings
 
             return maxCount;
         }
+
+        public static int[] RunningSum(int[] nums)
+        {
+            // Step 1: Initialize an array runningSum with the same length as nums
+            int[] runningSum = new int[nums.Length];
+
+            // Step 2: Set the first element of runningSum to the first element of nums
+            runningSum[0] = nums[0];
+
+            // Step 3: Iterate through the array starting from the second element
+            for (int i = 1; i < nums.Length; i++)
+            {
+                // Step 4: Calculate the running sum
+                runningSum[i] = runningSum[i - 1] + nums[i];
+            }
+
+            return runningSum;
+        }
     }
 }
