@@ -100,5 +100,37 @@ namespace CodeChallenges.ArrayAndStrings
             // Step 5: Return the absolute value of minSum plus 1
             return Math.Abs(minSum) + 1;
         }
+
+        public static int[] GetAverages(int[] nums, int k)
+        {
+            // Step 1: Initialize an array of the same length as nums and fill it with -1
+            int n = nums.Length;
+            int[] avgs = new int[n];
+            Array.Fill(avgs, -1);
+
+            // Step 2: Calculate the initial sum of the first 2k + 1 elements
+            if (2 * k + 1 > n)
+            {
+                return avgs;
+            }
+
+            long currentSum = 0;
+            for (int i = 0; i < 2 * k + 1; i++)
+            {
+                currentSum += nums[i];
+            }
+
+            // Step 3: For each index, calculate the k-radius average using the current sum and update the avgs array
+            for (int i = k; i < n - k; i++)
+            {
+                avgs[i] = (int)(currentSum / (2 * k + 1));
+                if (i + k + 1 < n)
+                {
+                    currentSum += nums[i + k + 1] - nums[i - k];
+                }
+            }
+
+            return avgs;
+        }
     }
 }
